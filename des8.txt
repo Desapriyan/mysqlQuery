@@ -1,0 +1,85 @@
+USE mysql_demo_tnj;
+
+CREATE TABLE tb_desapriyan_sivaji(
+id INT NOT NULL,
+  std_first_name VARCHAR(65) NOT NULL DEFAULT  '',
+ std_last_name VARCHAR(80)NOT NULL DEFAULT '',
+  std_father_name VARCHAR(50)NOT NULL DEFAULT '',
+  std_mother_name VARCHAR(36) NOT NULL DEFAULT '',
+  std_birthday DATE NOT NULL,
+  std_age_number  FLOAT(24),
+ std_email_id VARCHAR(100) NOT NULL ,
+  std_phone_number LONG NOT NULL ,
+ PRIMARY KEY (id));
+       
+ INSERT INTO  tb_desapriyan_sivaji( id,std_first_name,std_last_name,std_father_name ,std_mother_name,std_birthday ,std_age_number,std_email_id,std_phone_number )
+   VALUES ('1','desapriyan','priyan','sivaji','arma sevli','2000-04-12','21','desa12@gmail.com','324567845678')   
+	                                        
+ 
+INSERT INTO  tb_desapriyan_sivaji( id,std_first_name,std_last_name,std_father_name ,std_mother_name,std_birthday ,std_age_number,std_email_id,std_phone_number )
+  VALUES ('2','priyan','desa','mani',' sevli','1908-09-04','34','tamil03@gmail.com','8977578908')
+ 
+ 
+INSERT INTO  tb_desapriyan_sivaji
+  VALUES ('3','kanmani','rk','ravi','gomathi','2000-03-05','22','rkkanmani2303@gmail.com','76867870980')
+ 
+INSERT INTO  tb_desapriyan_sivaji
+  VALUES ('4','akash','mani','ravi','priya','1991-07-09','25','akash09@gmail.com','8876434567')
+ 
+INSERT INTO  tb_desapriyan_sivaji
+  VALUES ('5','durgaveer','durgaveer','akash','kanmani','1808-06-06','23','durgaveer12@gmail.com','324567845678')
+ 
+ INSERT INTO  tb_desapriyan_sivaji
+  VALUES ('6','abishek','priyan','sivaji','sevli','2000-08-01','27','abishek56@gmail.com','98765435432')
+
+ INSERT INTO  tb_desapriyan_sivaji
+  VALUES ('7','raguvaran','raguvaran','sarath','divya','2003-09-05','29','raguvaran@gmail.com','876543234567')
+
+
+
+ 
+ ALTER TABLE tb_desapriyan_sivaji
+ADD address char(250)NOT NULL DEFAULT  '';
+
+
+SELECT * FROM tb_desapriyan_sivaji
+WHERE  std_first_name  = 'priyan';
+
+
+SELECT * FROM tb_desapriyan_sivaji
+WHERE std_first_name  = 'desapriyan' AND std_father_name  = 'sivaji';
+
+
+
+SELECT * FROM tb_desapriyan_sivaji
+WHERE std_last_name = 'priyan' AND (std_father_name  = 'sivaji' OR std_father_name  = 'mani');
+
+
+
+SELECT * FROM tb_desapriyan_sivaji
+WHERE std_mother_name = 'sevli' OR std_age_number = '21';
+
+
+
+UPDATE tb_desapriyan_sivaji
+SET address = 'thanjavur' WHERE id =7;
+
+
+
+ ALTER TABLE tb_desapriyan_sivaji
+ DROP COLUMN address;
+ 
+ 
+ SELECT * FROM tb_desapriyan_sivaji;
+ 
+ 
+ SELECT * FROM tb_desapriyan_sivaji WHERE  std_mother_name IN ('arma sevli','priya');
+ 
+ 
+  SELECT * FROM tb_desapriyan_sivaji WHERE  std_mother_name  LIKE 'ar%';
+ 
+ 
+
+
+
+ 
